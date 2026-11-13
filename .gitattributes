@@ -9,5 +9,5 @@
 /app/*.py text eol=lf
 /configs/*.toml text eol=lf
 /docs/baseline_evaluation.md text eol=lf
-/requirements*.txt text eol=lf
+/requirements.txt text eol=lf
 /scripts/*.py text eol=lf

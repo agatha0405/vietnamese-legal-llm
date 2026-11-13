@@ -4,7 +4,7 @@ Baseline dùng đúng 50 mẫu test đã ghim. Script kiểm tra SHA-256 của m
 
 ## Chạy đánh giá
 
-Chạy từ thư mục gốc với môi trường Python của dự án đã cài `requirements-analysis.txt`.
+Chạy từ thư mục gốc với môi trường Python của dự án đã cài `requirements.txt`.
 
 ```powershell
 .\.venv\Scripts\python.exe -X utf8 scripts/evaluate_baseline.py --check-only

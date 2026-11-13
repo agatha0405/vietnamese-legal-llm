@@ -18,7 +18,7 @@ Chuẩn bị một quy trình cài đặt và kiểm tra có thể chạy lại 
 | --- | --- |
 | `README.md` | Phát biểu bài toán, cài môi trường và hướng dẫn chạy. |
 | `.gitignore` | Loại môi trường ảo, dữ liệu làm việc, trọng số và đầu ra cục bộ khỏi Git. |
-| `requirements-torch.txt`, `requirements.txt` | Cố định wheel PyTorch CUDA và các thư viện dự án. |
+| `requirements.txt` | Cố định wheel PyTorch CUDA và các thư viện dự án. |
 | `configs/environment.toml` | ID, revision và tham số của phép thử. |
 | `scripts/check_environment.py` | Lệnh `environment` và `qlora`. |
 | `notebooks/environment_setup_colab.ipynb` | Các cell cài đặt, kiểm thử và tải báo cáo. |

@@ -13,7 +13,7 @@ from train_qlora import selected_checkpoint
 
 SOURCE_FILES = (
     "configs/environment.toml", "configs/inference.toml", "configs/training.toml",
-    "requirements-torch.txt", "requirements.txt", "requirements-analysis.txt",
+    "requirements.txt",
     "scripts/evaluate_baseline.py", "scripts/train_qlora.py", "scripts/run_checkpoint.py",
     "scripts/evaluate_adapter.py", "scripts/evaluate_refusal.py", "scripts/summarize_training.py", "scripts/demo.py",
     "app/app.py", "data/processed/legal_qa_master.jsonl", "data/processed/train.jsonl",

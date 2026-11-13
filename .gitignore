@@ -28,5 +28,8 @@ data/interim/
 /outputs/evaluation/refusal-qwen3b-r8/vn-road-oos-*.json
 /outputs/evaluation/reproduction/
 
-# Local presentation preparation
+# Local working notes and presentation preparation
+/PROJECT_PROGRESS.md
+/RESUME_INSTRUCTIONS.md
+/scripts/resume_pipeline.py
 /reports/

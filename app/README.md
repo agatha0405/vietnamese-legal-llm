@@ -29,4 +29,4 @@ Dùng cell demo cuối [notebook huấn luyện QLoRA](../notebooks/qlora_finetu
 | Chuyển mô hình | Gửi cùng câu hỏi trong Base, Fine-tuned và So sánh. Kiểm tra chế độ, thứ tự và thời gian. |
 | Lỗi mô hình | Kiểm tra thông báo khi adapter thiếu, hoặc mô phỏng lỗi CUDA trong test cô lập. |
 
-Xem trạng thái đã kiểm thử trong [báo cáo demo](../reports/DEMO_TEST_REPORT.md). Câu trả lời và căn cứ do mô hình sinh cần được đối chiếu với nguồn chính thức.
+Demo đã được kiểm tra trên API Gradio local với cả hai mô hình. Câu trả lời và căn cứ do mô hình sinh cần được đối chiếu với nguồn chính thức. [Giới hạn và kết quả đánh giá](../docs/technical_report.md#giới-hạn-và-đánh-giá-pháp-lý)

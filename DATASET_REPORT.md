@@ -39,7 +39,7 @@ Các đầu ra gồm [master có metadata](data/processed/legal_qa_master.jsonl)
 Tại thư mục gốc dự án, dùng môi trường Python của dự án.
 
 ```powershell
-.\.venv\Scripts\python.exe -m pip install -r requirements-analysis.txt
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
 .\.venv\Scripts\python.exe -X utf8 scripts/prepare_legal_dataset.py --download --verify-only
 ```
 

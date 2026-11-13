@@ -19,13 +19,14 @@ LoRA giữ trọng số nền và học hai ma trận hạng thấp để xấp 
 | Mô hình | Số mẫu | ROUGE-L | Token F1 | Exact Match | Giây/câu |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | Qwen2.5-3B-Instruct NF4 | 50 | 0,228305 | 0,308649 | 0/50 | 58,29 |
+| Qwen2.5-3B-Instruct + QLoRA rank 8 | 50 | 0,359918 | 0,400965 | 0/50 | 27,08 |
 
-Đã xác nhận 504 tensor LoRA thay đổi từ checkpoint-1 đến checkpoint-5. Sau lỗi VRAM, thay đổi allocator CUDA đã cho phép tiếp tục từ checkpoint-10. Theo dõi số liệu huấn luyện và kết quả adapter tại trang trạng thái. [Báo cáo baseline](../outputs/baseline/baseline_report.md) · [Trạng thái thực nghiệm](../PROJECT_PROGRESS.md)
+Adapter hoàn tất hai epoch và 100 bước với 14.966.784 tham số trainable. Validation loss cuối là 0,90517. Cả hai lượt suy luận dùng RTX 3050 Ti Laptop với cấu hình bộ cấp phát CUDA khác nhau, nên thời gian được báo riêng. [Gói adapter và số liệu huấn luyện](../outputs/finetuning/qwen3b-r8-step100.zip) · [So sánh mô hình](../outputs/evaluation/qwen3b-r8/results/comparison_report.md)
 
 ## Giới hạn và đánh giá pháp lý
 
-Ba chỉ số khớp văn bản phản ánh mức trùng với câu tham chiếu. Chấm độc lập cần đối chiếu tính đúng nội dung, đúng căn cứ, hallucination và từ chối. Bộ 50 câu hiện có chủ yếu là câu tra cứu. Khả năng từng gặp văn bản công khai trong pretraining chưa xác định. Cần giữ cùng môi trường để diễn giải chênh lệch độ trễ. [Rubric](baseline_evaluation.md)
+Ba chỉ số khớp văn bản phản ánh mức trùng với câu tham chiếu. Adapter vẫn có dự đoán dẫn sai điều hoặc trả lời ngoài phạm vi. Bộ 50 câu chủ yếu là câu tra cứu. Khả năng từng gặp văn bản công khai trong pretraining chưa xác định. Chấm pháp lý độc lập chưa thực hiện. [Rubric](baseline_evaluation.md) · [Phân tích lỗi](../outputs/evaluation/qwen3b-r8/error_analysis.csv)
 
 ## Tái lập
 
-Xem [lệnh kiểm tra và tiếp tục](../RESUME_INSTRUCTIONS.md) cho các bước huấn luyện, đánh giá và demo. Mỗi checkpoint lưu trạng thái cần cho Trainer tiếp tục sau gián đoạn.
+Xem [hướng dẫn cài đặt và chạy](../README.md#5-hướng-dẫn-cài-đặt-và-chạy) cho các bước huấn luyện, đánh giá và demo.

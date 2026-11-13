@@ -11,7 +11,7 @@
 | 24100040 | Nguyễn Việt Bách |
 | 24108222 | Nguyễn Văn Vinh |
 
-Dự án tinh chỉnh `Qwen/Qwen2.5-3B-Instruct` bằng QLoRA để trả lời câu hỏi tiếng Việt về pháp luật giao thông đường bộ. Hệ thống hướng đến câu trả lời nêu căn cứ, điều kiện áp dụng và ngoại lệ. Dataset gồm 500 cặp hỏi đáp từ bốn văn bản chính thức, chia theo nhóm điều khoản thành 400 train, 50 validation và 50 test. Mốc pháp lý của dataset là 13/11/2026. [Báo cáo dataset](DATASET_REPORT.md) · [Báo cáo học thuật](reports/REPORT_DRAFT.md)
+Dự án tinh chỉnh `Qwen/Qwen2.5-3B-Instruct` bằng QLoRA để trả lời câu hỏi tiếng Việt về pháp luật giao thông đường bộ. Hệ thống hướng đến câu trả lời nêu căn cứ, điều kiện áp dụng và ngoại lệ. Dataset gồm 500 cặp hỏi đáp từ bốn văn bản chính thức, chia theo nhóm điều khoản thành 400 train, 50 validation và 50 test. Mốc pháp lý của dataset là 13/11/2026. [Báo cáo dataset](DATASET_REPORT.md) · [Báo cáo kỹ thuật](docs/technical_report.md)
 
 **Built with Qwen.** Gói trọng số trong repo chứa adapter được huấn luyện cho dự án. Mô hình nền sử dụng Qwen Research License. [Ghi nhận và giấy phép](outputs/finetuning/NOTICE.txt)
 
@@ -21,7 +21,7 @@ Dự án tinh chỉnh `Qwen/Qwen2.5-3B-Instruct` bằng QLoRA để trả lời 
 - [scripts/train_qlora.py](scripts/train_qlora.py) nạp mô hình nền NF4 4-bit với double quantization, huấn luyện adapter LoRA rank 8 và tính loss trên phần trả lời của assistant. Cấu hình và lịch lưu checkpoint nằm trong [configs/training.toml](configs/training.toml).
 - [scripts/evaluate_baseline.py](scripts/evaluate_baseline.py) và [scripts/evaluate_adapter.py](scripts/evaluate_adapter.py) đánh giá Base và Fine-tuned trên cùng 50 câu test với chung prompt, chat template và thiết lập sinh. [Cấu hình suy luận](configs/inference.toml)
 - [app/app.py](app/app.py) cung cấp giao diện Gradio. Ứng dụng nạp một mô hình nền và bật hoặc tắt adapter theo chế độ đã chọn.
-- [notebooks/](notebooks/) trình bày các bước thực nghiệm. [outputs/](outputs/) chứa gói adapter, dự đoán, chỉ số và biểu đồ. [reports/](reports/) chứa báo cáo học thuật, phân tích lỗi và kiểm thử demo.
+- [notebooks/](notebooks/) trình bày các bước thực nghiệm. [outputs/](outputs/) chứa gói adapter, dự đoán, chỉ số và biểu đồ. [docs/](docs/) trình bày phương pháp và kết quả thực nghiệm.
 
 ## 3. Tính năng nổi bật
 
@@ -36,13 +36,13 @@ Dự án tinh chỉnh `Qwen/Qwen2.5-3B-Instruct` bằng QLoRA để trả lời 
 | Exact Match | 0/50 | 0/50 |
 | Thời gian sinh trung bình | 58,29 giây | 27,08 giây |
 
-Hai lượt suy luận dùng cùng RTX 3050 Ti Laptop với tùy chọn cấp phát CUDA khác nhau, nên thời gian được báo riêng. Adapter cải thiện độ khớp văn bản, nhưng vẫn có câu dẫn sai điều và trả lời ngoài phạm vi. Độ chính xác pháp lý đang chờ chấm độc lập. [Phân tích 10 ca lỗi](reports/ERROR_ANALYSIS.md) · [Kiểm thử demo](reports/DEMO_TEST_REPORT.md)
+Hai lượt suy luận dùng cùng RTX 3050 Ti Laptop với tùy chọn cấp phát CUDA khác nhau, nên thời gian được báo riêng. Adapter cải thiện độ khớp văn bản, nhưng vẫn có câu dẫn sai điều và trả lời ngoài phạm vi. Độ chính xác pháp lý đang chờ chấm độc lập. [Phân tích 10 ca lỗi](outputs/evaluation/qwen3b-r8/error_analysis.csv)
 
 ## 4. Yêu cầu môi trường
 
 - Python 3.12 hoặc 3.13 64-bit và PowerShell để chạy các lệnh Windows bên dưới.
 - GPU NVIDIA với driver tương thích CUDA 12.6 để suy luận NF4. Khi tái lập huấn luyện trên Colab, dùng GPU T4 16 GB hoặc tương đương.
-- PyTorch 2.8.0+cu126, Transformers 4.57.6, PEFT 0.17.1, TRL 0.22.2 và Gradio 6.9.0. [PyTorch CUDA](requirements-torch.txt) · [Phụ thuộc chính](requirements.txt) · [Phụ thuộc xử lý dữ liệu và biểu đồ](requirements-analysis.txt)
+- PyTorch 2.8.0+cu126, Transformers 4.57.6, PEFT 0.17.1, TRL 0.22.2 và Gradio 6.9.0. [Danh sách thư viện](requirements.txt)
 - Kết nối mạng để cài thư viện và tải mô hình nền ở lần chạy đầu.
 
 ## 5. Hướng dẫn cài đặt và chạy
@@ -56,9 +56,7 @@ Mở PowerShell tại thư mục gốc của dự án sau khi clone hoặc giả
 ```powershell
 python -m venv .venv
 $py = '.\.venv\Scripts\python.exe'
-& $py -m pip install -r requirements-torch.txt
 & $py -m pip install -r requirements.txt
-& $py -m pip install -r requirements-analysis.txt
 & $py -m pip check
 & $py -c "import torch; assert torch.cuda.is_available(), 'CUDA unavailable'; print(torch.cuda.get_device_name(0))"
 ```
@@ -101,7 +99,7 @@ Sau khi giải nén adapter, dùng các lệnh sau để kiểm tra dataset, ada
 
 ### Huấn luyện trên Colab
 
-Chọn GPU T4, mở [notebook huấn luyện QLoRA](notebooks/qlora_finetuning_colab.ipynb) và đưa [gói nguồn huấn luyện](artifacts/qlora_colab_source.zip) vào `MyDrive/vietnamese-legal-qlora/`. Để dùng adapter có sẵn, giải nén gói adapter vào thư mục `runs/qwen3b-r8-local/` bên dưới đường dẫn đó. Để huấn luyện mới, đặt `RUN_NAME` thành tên khác và chép `run_config.json` từ ZIP vào thư mục run mới. Notebook lưu checkpoint theo bước trên Drive. [Hướng dẫn khôi phục](RESUME_INSTRUCTIONS.md) · [Notebook so sánh](notebooks/model_comparison.ipynb)
+Chọn GPU T4, mở [notebook huấn luyện QLoRA](notebooks/qlora_finetuning_colab.ipynb) và đưa [gói nguồn huấn luyện](artifacts/qlora_colab_source.zip) vào `MyDrive/vietnamese-legal-qlora/`. Để dùng adapter có sẵn, giải nén gói adapter vào thư mục `runs/qwen3b-r8-local/` bên dưới đường dẫn đó. Để huấn luyện mới, đặt `RUN_NAME` thành tên khác và chép `run_config.json` từ ZIP vào thư mục run mới. Notebook lưu checkpoint theo bước trên Drive. [Notebook so sánh](notebooks/model_comparison.ipynb)
 
 ## 6. Định hướng phát triển
 

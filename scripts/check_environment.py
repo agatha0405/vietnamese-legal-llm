@@ -25,15 +25,14 @@ def check_environment(force_fp16):
 
     subprocess.run([sys.executable, "-m", "pip", "check"], check=True)
     versions = {}
-    for name in ("requirements-torch.txt", "requirements.txt"):
-        for line in (ROOT / name).read_text(encoding="utf-8").splitlines():
-            if not line or line.startswith(("#", "--")):
-                continue
-            requirement = Requirement(line)
-            installed = version(requirement.name)
-            if installed not in requirement.specifier:
-                raise RuntimeError(f"{requirement}: found {installed}")
-            versions[requirement.name] = installed
+    for line in (ROOT / "requirements.txt").read_text(encoding="utf-8").splitlines():
+        if not line or line.startswith(("#", "--")):
+            continue
+        requirement = Requirement(line)
+        installed = version(requirement.name)
+        if installed not in requirement.specifier:
+            raise RuntimeError(f"{requirement}: found {installed}")
+        versions[requirement.name] = installed
 
     import bitsandbytes as bnb
     import torch

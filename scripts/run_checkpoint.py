@@ -57,7 +57,7 @@ def writer(run):
     try:
         lock.mkdir()
     except FileExistsError:
-        raise RuntimeError(f"Run already locked. Inspect {lock / 'owner.json'} and see RESUME_INSTRUCTIONS.md.") from None
+        raise RuntimeError(f"Run already locked. Inspect {lock / 'owner.json'} before starting another process.") from None
     owner = lock / "owner.json"
     try:
         write_json(owner, {"hostname": socket.gethostname(), "pid": os.getpid()})

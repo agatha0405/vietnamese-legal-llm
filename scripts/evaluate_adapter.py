@@ -12,7 +12,7 @@ from summarize_training import FILES as TRAINING_SUMMARY_FILES
 from train_qlora import FINAL_FILES
 
 
-RESULT_FILES = ("predictions.csv", "metrics.json", "comparison.md", "comparison.png", "legal_review_sheet.csv", "legal_review_key.csv")
+RESULT_FILES = ("metrics.json", "legal_review_sheet.csv", "legal_review_key.csv")
 COMPARISON_FILES = ("comparison_predictions.csv", "comparison_metrics.csv", "error_analysis.csv", "comparison_report.md", "comparison_metrics.png", "training_loss.png")
 BASELINE_CSV = ROOT / "outputs/baseline/baseline_predictions.csv"
 
@@ -101,7 +101,6 @@ def report_results(run, rows, baseline, identity, training_curve):
     limit_hits = sum(row["generated_tokens"] == identity["adapter"]["identity"]["qwen"]["generation"]["max_new_tokens"] for row in rows)
     staged = run / f".results-{uuid4().hex}"
     staged.mkdir()
-    write_csv(staged / "predictions.csv", rows)
     paired = []
     for base, adapted in zip(base_rows, rows, strict=True):
         paired.append({
@@ -149,9 +148,8 @@ def report_results(run, rows, baseline, identity, training_curve):
     ax.bar([index + 0.19 for index in x], [adapter_scores[key] for key in metrics], width=0.38, label="QLoRA")
     ax.set(xticks=list(x), xticklabels=["ROUGE-L", "Token F1", "Exact Match"], ylim=(0, 1), ylabel="Điểm trung bình")
     ax.legend()
-    fig.savefig(staged / "comparison.png", dpi=160)
+    fig.savefig(staged / "comparison_metrics.png", dpi=160)
     plt.close(fig)
-    copyfile(staged / "comparison.png", staged / "comparison_metrics.png")
     copyfile(training_curve, staged / "training_loss.png")
     training_state = identity["training_validation"]
     trend = ", ".join(f"{row['step']} → {row['eval_loss']:.4f}" for row in training_state)
@@ -182,7 +180,7 @@ def report_results(run, rows, baseline, identity, training_curve):
     write_csv(staged / "error_analysis.csv", analysis)
     directions = Counter("tăng" if value > 0 else "giảm" if value < 0 else "bằng" for value in (row["delta_token_f1"] for row in paired))
     latency = "Hai lượt chạy dùng cùng môi trường suy luận." if same_environment else "Hai lượt chạy dùng môi trường khác nhau. Thời gian chỉ được báo riêng cho từng lượt."
-    (staged / "comparison.md").write_text(
+    (staged / "comparison_report.md").write_text(
         f"# So sánh Base và QLoRA\n\n{len(rows)} câu hỏi theo đúng thứ tự của lượt đánh giá baseline.\n\n"
         "| Chỉ số | Base | QLoRA | Chênh lệch |\n| --- | ---: | ---: | ---: |\n" + table + "\n\n"
         f"{latency} Thời gian tính theo giây/câu.\n\n"
@@ -196,7 +194,6 @@ def report_results(run, rows, baseline, identity, training_curve):
         "Đối chiếu đường cong train và validation khi nhận định overfitting.\n\n"
         + "\n".join(examples), encoding="utf-8",
     )
-    copyfile(staged / "comparison.md", staged / "comparison_report.md")
     publish(staged, run / "results", identity, len(rows), (*RESULT_FILES, *COMPARISON_FILES))
 
 

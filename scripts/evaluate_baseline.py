@@ -303,11 +303,10 @@ def make_report(metrics, rows, examples):
 
 def check_environment():
     pins = {}
-    for filename in ("requirements-torch.txt", "requirements.txt", "requirements-analysis.txt"):
-        for line in (ROOT / filename).read_text(encoding="utf-8").splitlines():
-            if "==" in line:
-                name, expected = line.split("==")
-                pins[name] = expected
+    for line in (ROOT / "requirements.txt").read_text(encoding="utf-8").splitlines():
+        if "==" in line:
+            name, expected = line.split("==")
+            pins[name] = expected
     for name in ("torch", "transformers", "bitsandbytes", "accelerate", "huggingface-hub", "tokenizers", "safetensors", "matplotlib"):
         if version(name) != pins[name]:
             raise RuntimeError(f"Expected {name}=={pins[name]}, found {version(name)}")

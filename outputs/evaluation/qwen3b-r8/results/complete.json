@@ -232,8 +232,6 @@
   },
   "step": 50,
   "files": {
-    "comparison.md": "e39cbecc271ec94c7c16d6b75d3fa2442a06fd3a2450fc1506f9253cdc0893a9",
-    "comparison.png": "a4f800aeb722ac67fc7782c1a02c932300eeba1f3df621c46bf8bb4e07c70cb9",
     "comparison_metrics.csv": "b1d94f136f470ee3cdece10736b251c968666b8744776bf511694a29ca19f8e4",
     "comparison_metrics.png": "a4f800aeb722ac67fc7782c1a02c932300eeba1f3df621c46bf8bb4e07c70cb9",
     "comparison_predictions.csv": "fba5b3e271dbecaff593eb00d296f92a38e2a68550463e7e54ab619033da8fa2",
@@ -242,7 +240,6 @@
     "legal_review_key.csv": "62cbba32148b5526ed6d92b6e01e3202447bc6aaa05c9e0150ef1b76397e72e8",
     "legal_review_sheet.csv": "80990bdfc9bbfc865731d2aded89070e493214dc889ebf685a9baa43d0999796",
     "metrics.json": "b984100b04f10a6f4c8ab8b0b99d2a94441ffeec1855c0c2d493efb3fa17156f",
-    "predictions.csv": "9c5d90bb3b062691ee3463f6ca308b97f83ac6f1dd7af7f2160b058bbc06beab",
     "training_loss.png": "4707aac4af74dacb63e2a0dfc4950d7cf1572e357ec530fffa48453dbad650c0"
   }
 }
