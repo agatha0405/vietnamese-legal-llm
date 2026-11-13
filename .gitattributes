@@ -1,0 +1,13 @@
+# Keep the exact bytes used by dataset and experiment checksums.
+/data/processed/** -text
+/outputs/baseline/baseline_metrics.json -text
+/outputs/baseline/baseline_predictions.csv -text
+/outputs/evaluation/qwen3b-r8/results/** -text
+/outputs/evaluation/refusal-qwen3b-r8/results/** -text
+
+# Use the same source bytes in checkouts and Colab bundles.
+/app/*.py text eol=lf
+/configs/*.toml text eol=lf
+/docs/baseline_evaluation.md text eol=lf
+/requirements*.txt text eol=lf
+/scripts/*.py text eol=lf

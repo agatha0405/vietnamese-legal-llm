@@ -1,0 +1,38 @@
+model_id = "Qwen/Qwen2.5-3B-Instruct"
+model_revision = "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+tokenizer_revision = "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+system_prompt = "Bạn trả lời câu hỏi về pháp luật giao thông đường bộ Việt Nam bằng tiếng Việt. Nêu căn cứ điều, khoản và số hiệu văn bản. Giữ đầy đủ điều kiện và ngoại lệ. Mốc áp dụng của bộ dữ liệu là ngày 13/11/2026."
+test_count = 50
+attention = "sdpa"
+batch_size = 1
+seed = 42
+trust_remote_code = false
+use_safetensors = true
+
+[files]
+"test.jsonl" = "51527cee2849ca0c0a5ad3bf4911ac52bb077a0250b4f944f4b90f2b7980a45c"
+"legal_qa_master.jsonl" = "01fdff891f59d739cee1d6c157c8701a5fcd0bfa46ac5edd3ff6e3ec3712ca68"
+"train.jsonl" = "0d937371e48538ff628efd66afae0befaefac93b1b42fbe2e367d44c95c4be88"
+"validation.jsonl" = "a1ecde0ac27385b895bf5a6963cb411629a94dff29350ef777f34beae3b916a3"
+
+[quantization]
+load_in_4bit = true
+bnb_4bit_quant_type = "nf4"
+bnb_4bit_use_double_quant = true
+bnb_4bit_compute_dtype = "float16"
+
+[generation]
+do_sample = false
+max_new_tokens = 256
+num_beams = 1
+use_cache = true
+eos_token_id = [151645, 151643]
+pad_token_id = 151643
+
+[metrics]
+normalization = "NFC, Unicode casefold, Unicode letters and digits, keep Vietnamese accents"
+rouge_l = "F1 of longest common subsequence"
+token_f1 = "F1 of multiset token overlap"
+exact_match = "equality of normalized token sequences"
+aggregation = "macro mean"
+latency = "synchronized wall time around generate, seconds per question, after one warmup"

@@ -1,0 +1,32 @@
+# Local environments and caches
+.venv/
+.ruff_cache/
+__pycache__/
+.ipynb_checkpoints/
+.env
+.env.*
+
+# Keep only the Colab bundles and environment checks referenced by the docs
+/artifacts/*
+!/artifacts/environment_checks/
+!/artifacts/environment_colab_source.zip
+!/artifacts/baseline_colab_source.zip
+!/artifacts/qlora_colab_source.zip
+
+# Local runs and raw source files
+runs/
+checkpoints/
+data/raw/
+data/interim/
+/data/rebuilt/
+*.safetensors
+*.ckpt
+
+# Per-question resume files
+/outputs/baseline/baseline_generations.jsonl
+/outputs/evaluation/qwen3b-r8/prediction-*.json
+/outputs/evaluation/refusal-qwen3b-r8/vn-road-oos-*.json
+/outputs/evaluation/reproduction/
+
+# Local presentation preparation
+/reports/

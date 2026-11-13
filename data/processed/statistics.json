@@ -1,0 +1,136 @@
+{
+  "total": 500,
+  "splits": {
+    "train": 400,
+    "validation": 50,
+    "test": 50
+  },
+  "groups": {
+    "train": 181,
+    "validation": 26,
+    "test": 23
+  },
+  "verification_status": {
+    "verified": 500,
+    "unverified": 0
+  },
+  "question_types": {
+    "train": {
+      "authored": 59,
+      "provision_lookup": 341
+    },
+    "validation": {
+      "authored": 9,
+      "provision_lookup": 41
+    },
+    "test": {
+      "authored": 10,
+      "provision_lookup": 40
+    }
+  },
+  "sources": {
+    "36/2024/QH15": 245,
+    "35/2024/QH15": 145,
+    "165/2024/NĐ-CP": 100,
+    "38/2024/TT-BGTVT": 10
+  },
+  "topics": {
+    "hanh_vi_bi_cam": 8,
+    "quy_tac_luu_thong": 74,
+    "nguoi_lai_va_giay_phep": 28,
+    "tai_nan_giao_thong": 16,
+    "tuan_tra_kiem_soat": 39,
+    "phuong_tien": 55,
+    "quan_ly_nha_nuoc": 11,
+    "quy_dinh_chung": 30,
+    "ket_cau_ha_tang": 134,
+    "duong_cao_toc": 40,
+    "van_tai_duong_bo": 50,
+    "du_lieu_giao_thong": 5,
+    "toc_do_va_khoang_cach": 10
+  },
+  "topics_by_split": {
+    "train": {
+      "hanh_vi_bi_cam": 5,
+      "quy_tac_luu_thong": 64,
+      "nguoi_lai_va_giay_phep": 24,
+      "tai_nan_giao_thong": 10,
+      "tuan_tra_kiem_soat": 28,
+      "phuong_tien": 44,
+      "quan_ly_nha_nuoc": 11,
+      "quy_dinh_chung": 27,
+      "ket_cau_ha_tang": 111,
+      "duong_cao_toc": 33,
+      "van_tai_duong_bo": 33,
+      "du_lieu_giao_thong": 3,
+      "toc_do_va_khoang_cach": 7
+    },
+    "validation": {
+      "quy_tac_luu_thong": 4,
+      "nguoi_lai_va_giay_phep": 2,
+      "phuong_tien": 9,
+      "tuan_tra_kiem_soat": 2,
+      "tai_nan_giao_thong": 2,
+      "ket_cau_ha_tang": 15,
+      "van_tai_duong_bo": 10,
+      "duong_cao_toc": 5,
+      "toc_do_va_khoang_cach": 1
+    },
+    "test": {
+      "quy_tac_luu_thong": 6,
+      "tai_nan_giao_thong": 4,
+      "tuan_tra_kiem_soat": 9,
+      "quy_dinh_chung": 3,
+      "phuong_tien": 2,
+      "nguoi_lai_va_giay_phep": 2,
+      "hanh_vi_bi_cam": 3,
+      "duong_cao_toc": 2,
+      "van_tai_duong_bo": 7,
+      "ket_cau_ha_tang": 8,
+      "du_lieu_giao_thong": 2,
+      "toc_do_va_khoang_cach": 2
+    }
+  },
+  "lengths": {
+    "question_words": {
+      "min": 7,
+      "median": 28.0,
+      "max": 119
+    },
+    "answer_words": {
+      "min": 21,
+      "median": 76.0,
+      "max": 565
+    },
+    "sequence_tokens": {
+      "min": 138,
+      "median": 237.0,
+      "max": 807
+    },
+    "assistant_tokens": {
+      "min": 40,
+      "median": 107.0,
+      "max": 684
+    }
+  },
+  "eligible_before_quota": {
+    "55": 426,
+    "49": 361,
+    "65": 289,
+    "38": 25
+  },
+  "filtered": {
+    "extraction_or_scope": 7,
+    "exact_duplicate": 8
+  },
+  "cross_split_group_overlap": 0,
+  "cross_split_near_duplicate_overlap": 0,
+  "trl_mask_checked": 500,
+  "out_of_scope_test": 12,
+  "tokenizer": {
+    "id": "Qwen/Qwen2.5-3B-Instruct",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+  },
+  "as_of_date": "2026-11-13",
+  "seed": 42
+}

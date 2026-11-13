@@ -1,0 +1,65 @@
+as_of = "2026-11-13"
+seed = 42
+sample_target = 500
+token_limit = 1024
+linked_articles = [
+    ["36/2024/QH15:12", "38/2024/TT-BGTVT:4"],
+    ["35/2024/QH15:8", "165/2024/NĐ-CP:4", "165/2024/NĐ-CP:5", "165/2024/NĐ-CP:6", "165/2024/NĐ-CP:7"],
+    ["35/2024/QH15:11", "165/2024/NĐ-CP:8"],
+]
+
+[[sources]]
+key = "55"
+document_id = "36/2024/QH15"
+title = "Luật Trật tự, an toàn giao thông đường bộ"
+edition = "55/VBHN-VPQH"
+source_url = "https://vanban.chinhphu.vn/?docid=217295&pageid=27160"
+pdf_url = "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf"
+sha256 = "9a20c8e616d444e3abe63c765a225d0797b7079c9a18e5fe7da0fc4f46847dac"
+last_article = 87
+exclude = [35]
+quota = 245
+topics = {1 = "quy_dinh_chung", 9 = "hanh_vi_bi_cam", 10 = "quy_tac_luu_thong", 34 = "phuong_tien", 56 = "nguoi_lai_va_giay_phep", 65 = "tuan_tra_kiem_soat", 80 = "tai_nan_giao_thong", 85 = "quan_ly_nha_nuoc"}
+effective_overrides = {"10.3" = "2026-07-01"}
+
+[[sources]]
+key = "49"
+document_id = "35/2024/QH15"
+title = "Luật Đường bộ"
+edition = "49/VBHN-VPQH"
+source_url = "https://vanban.chinhphu.vn/?docid=217234&pageid=27160"
+pdf_url = "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/49-vbhn-vpqh.pdf"
+sha256 = "522db5de8613ada683bcf873ae99ccbd590e4c7a6f848e9d878e7a67ed0f8ba3"
+last_article = 83
+exclude = [5, 29, 42]
+quota = 145
+topics = {1 = "quy_dinh_chung", 7 = "hanh_vi_bi_cam", 8 = "ket_cau_ha_tang", 44 = "duong_cao_toc", 56 = "van_tai_duong_bo", 81 = "quan_ly_nha_nuoc"}
+effective_overrides = {"43" = "2024-10-01", "50" = "2024-10-01"}
+
+[[sources]]
+key = "65"
+document_id = "165/2024/NĐ-CP"
+title = "Nghị định hướng dẫn Luật Đường bộ và Điều 77 Luật Trật tự, an toàn giao thông đường bộ"
+edition = "65/2026/VBHN-NĐ-BXD"
+source_url = "https://vanban.chinhphu.vn/?docid=219312&pageid=27160"
+pdf_url = "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/8/65-vbhn-bxd.signed.pdf"
+sha256 = "2748dfcad00deb7a9873c7a7984d9d677f5407d6c42ef7233c9341000e21a3ac"
+last_article = 66
+exclude = [3]
+quota = 100
+topics = {1 = "quy_dinh_chung", 4 = "ket_cau_ha_tang", 54 = "duong_cao_toc", 64 = "du_lieu_giao_thong"}
+effective_overrides = {}
+
+[[sources]]
+key = "38"
+document_id = "38/2024/TT-BGTVT"
+title = "Thông tư về tốc độ và khoảng cách an toàn"
+edition = "38/2024/TT-BGTVT"
+source_url = "https://vanban.chinhphu.vn/?docid=211873&pageid=27160"
+pdf_url = "https://datafiles.chinhphu.vn/cpp/files/vbpq/2024/11/38-bgtvt.pdf"
+sha256 = "b0addaf053bd302cf17b9c07ebf5403e29a10f6164ab9112ef0e7c85190c37dc"
+last_article = 11
+exclude = [6, 10, 11]
+quota = 10
+topics = {1 = "toc_do_va_khoang_cach"}
+effective_overrides = {}

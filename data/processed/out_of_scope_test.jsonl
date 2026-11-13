@@ -1,0 +1,12 @@
+{"id": "vn-road-oos-01", "question": "Tôi muốn đăng ký kết hôn thì chuẩn bị giấy tờ gì?", "expected_behavior": "state_out_of_scope"}
+{"id": "vn-road-oos-02", "question": "Tôi phải kê khai thuế thu nhập cá nhân từ tiền cho thuê nhà như thế nào?", "expected_behavior": "state_out_of_scope"}
+{"id": "vn-road-oos-03", "question": "Người lao động được nghỉ hằng năm bao nhiêu ngày?", "expected_behavior": "state_out_of_scope"}
+{"id": "vn-road-oos-04", "question": "Hộ gia đình có thể xin cấp giấy chứng nhận quyền sử dụng đất ở đâu?", "expected_behavior": "state_out_of_scope"}
+{"id": "vn-road-oos-05", "question": "Tôi muốn đăng ký quyền tác giả cho một bản nhạc thì làm thế nào?", "expected_behavior": "state_out_of_scope"}
+{"id": "vn-road-oos-06", "question": "Ở Nhật Bản, người lái ô tô phải đi bên nào của đường?", "expected_behavior": "state_out_of_scope"}
+{"id": "vn-road-oos-07", "question": "Pháp quy định nồng độ cồn tối đa cho người mới có bằng lái là bao nhiêu?", "expected_behavior": "state_out_of_scope"}
+{"id": "vn-road-oos-08", "question": "Tôi cần những giấy tờ gì để làm thủ tục xuất cảnh bằng đường hàng không?", "expected_behavior": "state_out_of_scope"}
+{"id": "vn-road-oos-09", "question": "Đăng ký phương tiện thủy nội địa tại Việt Nam phải làm ở đâu?", "expected_behavior": "state_out_of_scope"}
+{"id": "vn-road-oos-10", "question": "Phi công cần giấy phép hạng nào để điều khiển máy bay chở khách?", "expected_behavior": "state_out_of_scope"}
+{"id": "vn-road-oos-11", "question": "Hợp đồng thuê căn hộ hết hạn thì tiền đặt cọc được xử lý thế nào?", "expected_behavior": "state_out_of_scope"}
+{"id": "vn-road-oos-12", "question": "Các bên cần thực hiện thủ tục nào khi muốn thành lập công ty cổ phần?", "expected_behavior": "state_out_of_scope"}
