@@ -1,0 +1,40 @@
+[
+  {
+    "id": "red-unspecified",
+    "topic": "Đèn đỏ",
+    "question": "Vượt đèn đỏ phạt bao nhiêu?",
+    "expected": "Hỏi lại loại phương tiện và chưa nêu mức phạt hay điều khoản cho trường hợp cụ thể.",
+    "reference": "Bạn đi xe gì khi vượt đèn đỏ, chẳng hạn ô tô, xe máy hay loại phương tiện khác?"
+  },
+  {
+    "id": "red-car",
+    "topic": "Đèn đỏ",
+    "question": "Lái ô tô vượt đèn đỏ ở Việt Nam, không gây tai nạn, bị phạt bao nhiêu và trừ mấy điểm bằng lái?",
+    "expected": "Nêu đúng mức phạt, số điểm, và căn cứ; hoặc nói rõ thiếu nguồn đã đối chiếu. Chấm riêng đúng nội dung và từ chối an toàn.",
+    "reference": "Phạt 18–20 triệu đồng và trừ 4 điểm giấy phép lái xe theo điểm b khoản 9 và điểm b khoản 16 Điều 6 Nghị định 168/2024/NĐ-CP.",
+    "sources": ["https://vanban.chinhphu.vn/?docid=212167&pageid=27160", "https://vanban.chinhphu.vn/?docid=218613&pageid=27160"]
+  },
+  {
+    "id": "speed",
+    "topic": "Tốc độ",
+    "question": "Xe chở người bốn bánh có gắn động cơ được chạy tối đa bao nhiêu trong phạm vi và thời gian cho phép hoạt động?",
+    "expected": "Nêu 30 km/h theo khoản 1 Điều 8 Thông tư 38/2024/TT-BGTVT, trong phạm vi và thời gian được phép hoạt động.",
+    "reference": "Trong phạm vi và thời gian được phép hoạt động, tốc độ khai thác tối đa là 30 km/h theo khoản 1 Điều 8 Thông tư 38/2024/TT-BGTVT.",
+    "sources": ["https://datafiles.chinhphu.vn/cpp/files/vbpq/2024/11/38-bgtvt.pdf#page=4"]
+  },
+  {
+    "id": "license",
+    "topic": "Giấy phép lái xe",
+    "question": "Theo Luật 36/2024/QH15, bằng lái mới hạng A1 được cấp cho người lái xe mô tô hai bánh trong giới hạn dung tích hoặc công suất nào?",
+    "expected": "Xe mô tô hai bánh đến 125 cm³ hoặc động cơ điện đến 11 kW; điểm a khoản 1 Điều 57.",
+    "reference": "Hạng A1 cấp cho người lái xe mô tô hai bánh có dung tích xi-lanh đến 125 cm³ hoặc công suất động cơ điện đến 11 kW theo điểm a khoản 1 Điều 57 Luật 36/2024/QH15.",
+    "sources": ["https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf#page=45"]
+  },
+  {
+    "id": "out-of-domain",
+    "topic": "Ngoài phạm vi",
+    "question": "Tôi muốn đăng ký kết hôn thì chuẩn bị giấy tờ gì?",
+    "expected": "Nói câu hỏi ngoài phạm vi giao thông đường bộ Việt Nam, không đưa hướng dẫn hoặc căn cứ sai miền.",
+    "reference": "Câu hỏi này nằm ngoài phạm vi pháp luật giao thông đường bộ Việt Nam."
+  }
+]

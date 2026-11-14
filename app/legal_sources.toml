@@ -1,0 +1,514 @@
+# Kho căn cứ suy luận, tách riêng dữ liệu SFT. Mốc rà soát 14/11/2026.
+verified_through = 2026-11-14
+
+[documents.sanctions]
+number = "Nghị định 168/2024/NĐ-CP"
+title = "Nghị định 168/2024/NĐ-CP quy định xử phạt vi phạm hành chính về trật tự, an toàn giao thông trong lĩnh vực giao thông đường bộ; trừ điểm, phục hồi điểm giấy phép lái xe"
+max_article = 55
+effective_from = 2025-01-01
+aliases = ["nghị định 168/2024/nđ-cp", "nghị định số 168/2024/nđ-cp", "nghị định 168", "nđ 168", "nđ-cp 168", "168/2024/nđ-cp"]
+url = "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm"
+amendment_url = "https://vanban.chinhphu.vn/?docid=218613&pageid=27160"
+
+[documents.traffic_law]
+number = "Luật 36/2024/QH15"
+title = "Luật Trật tự, an toàn giao thông đường bộ năm 2024"
+max_article = 89
+effective_from = 2025-01-01
+aliases = ["luật trật tự, an toàn giao thông đường bộ", "luật trật tự an toàn giao thông đường bộ", "luật ttatgtđb", "36/2024/qh15", "luật số 36/2024/qh15", "luật 36/2024/qh15", "luật 36", "55/vbhn-vpqh"]
+url = "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf#page=45"
+
+[documents.road_law]
+number = "Luật 35/2024/QH15"
+title = "Luật Đường bộ năm 2024"
+max_article = 86
+effective_from = 2025-01-01
+aliases = ["luật đường bộ", "35/2024/qh15", "luật số 35/2024/qh15", "luật 35/2024/qh15", "luật 35", "49/vbhn-vpqh"]
+url = "https://vanban.chinhphu.vn/?docid=217234&pageid=27160"
+
+[documents.decree_165]
+number = "Nghị định 165/2024/NĐ-CP"
+title = "Nghị định 165/2024/NĐ-CP quy định chi tiết, hướng dẫn thi hành một số điều của Luật Đường bộ và Điều 77 Luật Trật tự, an toàn giao thông đường bộ"
+max_article = 70
+effective_from = 2025-01-01
+aliases = ["nghị định 165/2024/nđ-cp", "nghị định số 165/2024/nđ-cp", "nghị định 165", "165/2024/nđ-cp", "65/2026/vbhn-nđ-bxd"]
+url = "https://vanban.chinhphu.vn/?docid=219312&pageid=27160"
+
+[documents.speed]
+number = "Thông tư 38/2024/TT-BGTVT"
+title = "Thông tư 38/2024/TT-BGTVT quy định về tốc độ và khoảng cách an toàn của xe cơ giới, xe máy chuyên dùng tham gia giao thông trên đường bộ"
+max_article = 12
+effective_from = 2025-01-01
+aliases = ["thông tư 38/2024/tt-bgtvt", "thông tư số 38/2024/tt-bgtvt", "thông tư 38", "38/2024/tt-bgtvt"]
+url = "https://datafiles.chinhphu.vn/cpp/files/vbpq/2024/11/38-bgtvt.pdf#page=4"
+amendment_url = "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-74-2026-vbhn-tt-bxd-470578/68818.htm"
+
+[documents.decree_238]
+number = "Nghị định 238/2026/NĐ-CP"
+title = "Nghị định 238/2026/NĐ-CP sửa đổi, bổ sung một số điều của Nghị định 168/2024/NĐ-CP"
+max_article = 21
+effective_from = 2026-08-15
+aliases = ["nghị định 238/2026/nđ-cp", "nghị định số 238/2026/nđ-cp", "nghị định 238", "238/2026/nđ-cp"]
+url = "https://vanban.chinhphu.vn/?docid=218613&pageid=27160"
+
+[topics.signal]
+matches = ['\b(vượt|qua) đèn đỏ\b', '\bkhông (chấp hành|tuân thủ) (hiệu lệnh (của )?)?đèn (tín hiệu|giao thông|đỏ)\b']
+exclude = ['\b(đèn đỏ nhấp nháy|đường sắt|đường ngang|xe ưu tiên|cảnh sát|csgt|rẽ|đèn mũi tên|biển phụ|xe cứu thương)\b', '\b(không|chưa) (vượt|qua) đèn đỏ\b']
+condition = "không chấp hành hiệu lệnh của đèn tín hiệu giao thông (không gây tai nạn giao thông)"
+
+[topics.helmet]
+matches = ['\b(không đội|không cài quai|quên đội) mũ bảo hiểm\b', '\bđội mũ bảo hiểm không cài quai\b']
+exclude = ['\b(người ngồi sau|ngồi sau|người được chở|chở người|trẻ em)\b']
+condition = "không đội “mũ bảo hiểm cho người đi mô tô, xe máy” hoặc đội “mũ bảo hiểm cho người đi mô tô, xe máy” không cài quai đúng quy cách khi điều khiển xe tham gia giao thông trên đường bộ"
+
+[topics.helmet_passenger]
+matches = ['\bchở người(?: ngồi trên xe)? (?:không đội|không cài quai) mũ bảo hiểm\b', '\bngười (?:ngồi sau|được chở)[^\n]{0,25}(?:không đội|không cài quai) mũ bảo hiểm\b']
+exclude = ['\b(người bệnh|cấp cứu|dưới 6 tuổi|dưới 06 tuổi|áp giải)\b']
+condition = "chở người ngồi trên xe không đội “mũ bảo hiểm cho người đi mô tô, xe máy” hoặc đội “mũ bảo hiểm cho người đi mô tô, xe máy” không cài quai đúng quy cách (trừ trường hợp chở người bệnh đi cấp cứu, trẻ em dưới 06 tuổi, áp giải người có hành vi vi phạm pháp luật)"
+
+[topics.phone]
+matches = ['\b(điện thoại|thiết bị điện tử)\b']
+exclude = ['\b(rảnh tay|không cầm|không dùng tay|không sử dụng|đã đỗ|đã dừng|đang đỗ|hành khách|người ngồi sau)\b']
+facts = ['\b(đang chạy|đang di chuyển|đang lưu thông|đang điều khiển)\b', '\b(cầm|cầm tay|dùng tay)\b']
+clarification = "Xe có đang chạy và người lái có dùng tay cầm thiết bị không?"
+condition = "dùng tay cầm và sử dụng điện thoại hoặc các thiết bị điện tử khác khi điều khiển phương tiện đang di chuyển trên đường bộ"
+
+[topics.wrong_way]
+matches = ['\bđi ngược chiều\b', '\bngược chiều (?:của )?đường một chiều\b', '\bngược chiều[^\n]{0,25}đường một chiều\b', '\bngược chiều[^\n]{0,25}cấm đi ngược chiều\b']
+exclude = ['\b(cao tốc|xe ưu tiên|làm nhiệm vụ khẩn cấp|lùi xe|quay đầu)\b']
+condition = "đi ngược chiều của đường một chiều, đi ngược chiều trên đường có biển “Cấm đi ngược chiều” (không gây tai nạn giao thông)"
+
+[topics.wrong_way_expressway]
+matches = ['\bđi ngược chiều[^\n]{0,30}cao tốc\b', '\bcao tốc[^\n]{0,30}đi ngược chiều\b']
+exclude = ['\b(xe ưu tiên|làm nhiệm vụ khẩn cấp|lùi xe|quay đầu)\b']
+condition = "điều khiển xe đi ngược chiều trên đường cao tốc (trừ các xe ưu tiên đang đi làm nhiệm vụ khẩn cấp theo quy định)"
+
+[topics.turn_signal]
+matches = ['\b(?:không bật|không có|không dùng|thiếu|quên) (?:tín hiệu )?(?:xi[- ]?nhan|đèn báo rẽ|tín hiệu báo hướng rẽ)\b', '\bchuyển hướng[^\n]{0,25}(?:không bật xi[- ]?nhan|không có tín hiệu|không báo hướng rẽ)\b', '\b(?:rẽ trái|rẽ phải|chuyển hướng)[^\n]{0,15}không (?:bật )?xi[- ]?nhan\b']
+exclude = ['\b(vượt đèn đỏ|chuyển làn|đoạn đường cong|nơi đường không giao nhau cùng mức)\b']
+condition = "chuyển hướng không quan sát hoặc không bảo đảm khoảng cách an toàn với xe phía sau hoặc không giảm tốc độ hoặc không có tín hiệu báo hướng rẽ hoặc có tín hiệu báo hướng rẽ nhưng không sử dụng liên tục trong quá trình chuyển hướng (trừ trường hợp đi theo hướng cong của đoạn đường bộ ở nơi đường không giao nhau cùng mức)"
+
+[topics.lane_change]
+matches = ['\bchuyển làn(?: đường)? (?:không đúng nơi|không đúng quy định|không có tín hiệu|không bật xi[- ]?nhan|sai quy định|không bảo đảm khoảng cách)\b']
+exclude = ['\bcao tốc\b']
+condition = "chuyển làn đường không đúng nơi cho phép hoặc không có tín hiệu báo trước hoặc chuyển làn đường không đúng quy định “mỗi lần chuyển làn đường chỉ được phép chuyển sang một làn đường liền kề” (không gây tai nạn)"
+
+[topics.lane_change_expressway]
+matches = ['\bchuyển làn(?: đường)?[^\n]{0,40}cao tốc\b', '\bcao tốc[^\n]{0,40}chuyển làn(?: đường)? (?:không đúng|không có tín hiệu|không bật|sai quy định|không bảo đảm)\b']
+exclude = []
+condition = "chuyển làn đường không đúng nơi cho phép hoặc không có tín hiệu báo trước hoặc chuyển làn đường không đúng quy định “mỗi lần chuyển làn đường chỉ được phép chuyển sang một làn đường liền kề” khi chạy trên đường cao tốc"
+
+[topics.seatbelt]
+matches = ['\b(không thắt|không đeo|không cài|quên thắt) dây(?: đai)? an toàn\b']
+exclude = ['\b(người được chở|hành khách|ngồi sau)\b']
+condition = "không thắt dây đai an toàn khi điều khiển xe chạy trên đường"
+
+[topics.sidewalk]
+matches = ['\b(?:đi|chạy|leo|lái)(?: [^\n]{0,20})? (?:lên|trên) (?:vỉa hè|hè phố)\b']
+exclude = ['\b(vào nhà|cơ quan|đỗ xe|để xe|họp chợ|bày bán)\b']
+condition = "điều khiển xe đi trên vỉa hè (trừ trường hợp điều khiển xe đi qua vỉa hè để vào nhà, cơ quan)"
+
+[topics.expressway_entry]
+matches = ['\b(?:đi|chạy|lái)(?: [^\n]{0,20})? (?:vào|lên) (?:đường )?cao tốc\b']
+exclude = ['\b(phục vụ|quản lý|bảo trì|dừng xe|đỗ xe|lùi xe|quay đầu|ngược chiều|làn dừng|chuyển làn|tốc độ|khoảng cách)\b']
+condition = "điều khiển xe mô tô, xe gắn máy đi vào đường cao tốc (trừ xe phục vụ việc quản lý, bảo trì đường cao tốc)"
+
+[topics.alcohol]
+matches = ['\bnồng độ cồn\b', '\buống rượu bia[^\n]{0,20}(?:lái xe|điều khiển xe|chạy xe|tham gia giao thông)\b', '\b(?:lái xe|điều khiển xe)[^\n]{0,25}(?:rượu bia|có cồn|say rượu)\b']
+exclude = ['\b(không chấp hành|từ chối kiểm tra|ma túy|chất kích thích)\b']
+condition = "điều khiển xe trên đường mà trong máu hoặc hơi thở có nồng độ cồn"
+
+[[rules]]
+id = "signal-moto"
+topic = "signal"
+vehicle = "moto"
+vehicle_label = "xe mô tô hoặc xe gắn máy"
+document = "sanctions"
+effective_from = 2025-01-01
+fine_vnd = [4000000, 6000000]
+points = 4
+points_condition = "nếu có giấy phép thuộc diện bị trừ điểm"
+citation = "điểm c khoản 7 và điểm b khoản 13 Điều 7"
+
+[[rules]]
+id = "signal-car"
+topic = "signal"
+vehicle = "car"
+vehicle_label = "ô tô"
+document = "sanctions"
+effective_from = 2025-01-01
+fine_vnd = [18000000, 20000000]
+points = 4
+citation = "điểm b khoản 9 và điểm b khoản 16 Điều 6"
+
+[[rules]]
+id = "signal-bicycle"
+topic = "signal"
+vehicle = "bicycle"
+vehicle_label = "xe đạp hoặc xe đạp máy"
+document = "sanctions"
+effective_from = 2025-01-01
+fine_vnd = [150000, 250000]
+points = 0
+citation = "điểm đ khoản 2 Điều 9"
+
+[[rules]]
+id = "helmet-moto"
+topic = "helmet"
+vehicle = "moto"
+vehicle_label = "xe mô tô hoặc xe gắn máy"
+document = "sanctions"
+effective_from = 2025-01-01
+fine_vnd = [400000, 600000]
+points = 0
+citation = "điểm h khoản 2 Điều 7"
+
+[[rules]]
+id = "helmet-passenger-moto"
+topic = "helmet_passenger"
+vehicle = "moto"
+vehicle_label = "xe mô tô hoặc xe gắn máy"
+document = "sanctions"
+effective_from = 2025-01-01
+fine_vnd = [400000, 600000]
+points = 0
+citation = "điểm i khoản 2 Điều 7"
+
+[[rules]]
+id = "phone-bicycle"
+topic = "phone"
+vehicle = "bicycle"
+vehicle_label = "xe đạp hoặc xe đạp máy"
+document = "sanctions"
+effective_from = 2025-01-01
+fine_vnd = [100000, 200000]
+points = 0
+citation = "điểm h khoản 1 Điều 9"
+
+[[rules]]
+id = "phone-moto"
+topic = "phone"
+vehicle = "moto"
+vehicle_label = "xe mô tô hoặc xe gắn máy"
+document = "sanctions"
+effective_from = 2025-01-01
+fine_vnd = [800000, 1000000]
+points = 4
+points_condition = "nếu có giấy phép thuộc diện bị trừ điểm"
+citation = "điểm đ khoản 4 và điểm b khoản 13 Điều 7"
+
+[[rules]]
+id = "phone-car"
+topic = "phone"
+vehicle = "car"
+vehicle_label = "ô tô"
+document = "sanctions"
+effective_from = 2025-01-01
+fine_vnd = [4000000, 6000000]
+points = 4
+citation = "điểm h khoản 5 và điểm b khoản 16 Điều 6"
+
+[[rules]]
+id = "wrong-way-moto"
+topic = "wrong_way"
+vehicle = "moto"
+vehicle_label = "xe mô tô hoặc xe gắn máy"
+document = "sanctions"
+effective_from = 2025-01-01
+fine_vnd = [4000000, 6000000]
+points = 2
+points_condition = "nếu có giấy phép thuộc diện bị trừ điểm"
+citation = "điểm a khoản 7 và điểm a khoản 13 Điều 7"
+
+[[rules]]
+id = "wrong-way-car"
+topic = "wrong_way"
+vehicle = "car"
+vehicle_label = "ô tô"
+document = "sanctions"
+effective_from = 2025-01-01
+fine_vnd = [18000000, 20000000]
+points = 4
+citation = "điểm d khoản 9 và điểm b khoản 16 Điều 6"
+
+[[rules]]
+id = "wrong-way-bicycle"
+topic = "wrong_way"
+vehicle = "bicycle"
+vehicle_label = "xe đạp, xe đạp máy hoặc xe thô sơ khác"
+document = "sanctions"
+effective_from = 2025-01-01
+fine_vnd = [300000, 400000]
+points = 0
+citation = "điểm c khoản 3 Điều 9"
+
+[[rules]]
+id = "wrong-way-expressway-car"
+topic = "wrong_way_expressway"
+vehicle = "car"
+vehicle_label = "ô tô"
+document = "sanctions"
+effective_from = 2025-01-01
+fine_vnd = [30000000, 40000000]
+points = 10
+citation = "điểm đ khoản 11 và điểm d khoản 16 Điều 6"
+
+[[rules]]
+id = "turn-signal-moto"
+topic = "turn_signal"
+vehicle = "moto"
+vehicle_label = "xe mô tô hoặc xe gắn máy"
+document = "sanctions"
+effective_from = 2025-01-01
+fine_vnd = [600000, 800000]
+points = 0
+citation = "điểm a khoản 3 Điều 7"
+
+[[rules]]
+id = "turn-signal-car"
+topic = "turn_signal"
+vehicle = "car"
+vehicle_label = "ô tô"
+document = "sanctions"
+effective_from = 2025-01-01
+fine_vnd = [800000, 1000000]
+points = 0
+citation = "điểm c khoản 3 Điều 6"
+
+[[rules]]
+id = "turn-signal-bicycle"
+topic = "turn_signal"
+vehicle = "bicycle"
+vehicle_label = "xe đạp hoặc xe đạp máy"
+document = "sanctions"
+effective_from = 2025-01-01
+fine_vnd = [100000, 200000]
+points = 0
+citation = "điểm b khoản 1 Điều 9"
+
+[[rules]]
+id = "lane-change-moto"
+topic = "lane_change"
+vehicle = "moto"
+vehicle_label = "xe mô tô hoặc xe gắn máy"
+document = "sanctions"
+effective_from = 2025-01-01
+fine_vnd = [200000, 400000]
+points = 0
+citation = "điểm e khoản 1 Điều 7 (bổ sung cụm từ bảo đảm khoảng cách an toàn theo khoản 2 Điều 19 Nghị định 238/2026/NĐ-CP từ 15/08/2026)"
+
+[[rules]]
+id = "lane-change-car"
+topic = "lane_change"
+vehicle = "car"
+vehicle_label = "ô tô"
+document = "sanctions"
+effective_from = 2025-01-01
+fine_vnd = [600000, 800000]
+points = 0
+citation = "điểm a khoản 2 Điều 6 (bổ sung cụm từ bảo đảm khoảng cách an toàn theo khoản 2 Điều 19 Nghị định 238/2026/NĐ-CP từ 15/08/2026)"
+
+[[rules]]
+id = "lane-change-expressway-car"
+topic = "lane_change_expressway"
+vehicle = "car"
+vehicle_label = "ô tô"
+document = "sanctions"
+effective_from = 2025-01-01
+fine_vnd = [4000000, 6000000]
+points = 2
+citation = "điểm g khoản 5 và điểm a khoản 16 Điều 6 (bổ sung cụm từ bảo đảm khoảng cách an toàn theo khoản 2 Điều 19 Nghị định 238/2026/NĐ-CP từ 15/08/2026)"
+
+[[rules]]
+id = "seatbelt-car"
+topic = "seatbelt"
+vehicle = "car"
+vehicle_label = "ô tô"
+document = "sanctions"
+effective_from = 2025-01-01
+fine_vnd = [800000, 1000000]
+points = 0
+citation = "điểm k khoản 3 Điều 6"
+
+[[rules]]
+id = "sidewalk-moto"
+topic = "sidewalk"
+vehicle = "moto"
+vehicle_label = "xe mô tô hoặc xe gắn máy"
+document = "sanctions"
+effective_from = 2025-01-01
+fine_vnd = [4000000, 6000000]
+points = 2
+points_condition = "nếu có giấy phép thuộc diện bị trừ điểm"
+citation = "điểm a khoản 7 và điểm a khoản 13 Điều 7"
+
+[[rules]]
+id = "sidewalk-car"
+topic = "sidewalk"
+vehicle = "car"
+vehicle_label = "ô tô"
+document = "sanctions"
+effective_from = 2025-01-01
+fine_vnd = [6000000, 8000000]
+points = 4
+citation = "điểm d khoản 6 và điểm b khoản 16 Điều 6"
+
+[[rules]]
+id = "expressway-moto"
+topic = "expressway_entry"
+vehicle = "moto"
+vehicle_label = "xe mô tô hoặc xe gắn máy"
+document = "sanctions"
+effective_from = 2025-01-01
+fine_vnd = [4000000, 6000000]
+points = 6
+points_condition = "nếu có giấy phép thuộc diện bị trừ điểm"
+citation = "điểm b khoản 7 và điểm c khoản 13 Điều 7"
+
+[[rules]]
+id = "alcohol-moto"
+topic = "alcohol"
+vehicle = "moto"
+vehicle_label = "xe mô tô hoặc xe gắn máy"
+document = "sanctions"
+effective_from = 2025-01-01
+points = 0
+supports_other_sanction = true
+citation = "điểm a khoản 6, điểm b khoản 8, điểm d khoản 9, điểm c khoản 12, điểm b và điểm d khoản 13 Điều 7"
+fact = """Người điều khiển xe mô tô hoặc xe gắn máy trên đường mà trong máu hoặc hơi thở có nồng độ cồn bị xử phạt theo 03 mức:
+- Mức 1 (chưa vượt quá 50 mg/100 ml máu hoặc chưa vượt quá 0,25 mg/1 lít khí thở): phạt tiền từ 2.000.000 đến 3.000.000 đồng và trừ 04 điểm giấy phép lái xe (điểm a khoản 6 và điểm b khoản 13 Điều 7).
+- Mức 2 (vượt quá 50 mg đến 80 mg/100 ml máu hoặc vượt quá 0,25 mg đến 0,4 mg/1 lít khí thở): phạt tiền từ 6.000.000 đến 8.000.000 đồng và trừ 10 điểm giấy phép lái xe (điểm b khoản 8 và điểm d khoản 13 Điều 7).
+- Mức 3 (vượt quá 80 mg/100 ml máu hoặc vượt quá 0,4 mg/1 lít khí thở): phạt tiền từ 8.000.000 đến 10.000.000 đồng và tước quyền sử dụng giấy phép lái xe từ 22 tháng đến 24 tháng (điểm d khoản 9 và điểm c khoản 12 Điều 7)."""
+
+[[rules]]
+id = "alcohol-car"
+topic = "alcohol"
+vehicle = "car"
+vehicle_label = "ô tô"
+document = "sanctions"
+effective_from = 2025-01-01
+points = 0
+supports_other_sanction = true
+citation = "điểm c khoản 6, điểm a khoản 9, điểm a khoản 11, điểm c khoản 15, điểm b và điểm d khoản 16 Điều 6"
+fact = """Người điều khiển ô tô trên đường mà trong máu hoặc hơi thở có nồng độ cồn bị xử phạt theo 03 mức:
+- Mức 1 (chưa vượt quá 50 mg/100 ml máu hoặc chưa vượt quá 0,25 mg/1 lít khí thở): phạt tiền từ 6.000.000 đến 8.000.000 đồng và trừ 04 điểm giấy phép lái xe (điểm c khoản 6 và điểm b khoản 16 Điều 6).
+- Mức 2 (vượt quá 50 mg đến 80 mg/100 ml máu hoặc vượt quá 0,25 mg đến 0,4 mg/1 lít khí thở): phạt tiền từ 18.000.000 đến 20.000.000 đồng và trừ 10 điểm giấy phép lái xe (điểm a khoản 9 và điểm d khoản 16 Điều 6).
+- Mức 3 (vượt quá 80 mg/100 ml máu hoặc vượt quá 0,4 mg/1 lít khí thở): phạt tiền từ 30.000.000 đến 40.000.000 đồng và tước quyền sử dụng giấy phép lái xe từ 22 tháng đến 24 tháng (điểm a khoản 11 và điểm c khoản 15 Điều 6)."""
+
+[[rules]]
+id = "alcohol-bicycle"
+topic = "alcohol"
+vehicle = "bicycle"
+vehicle_label = "xe đạp, xe đạp máy hoặc xe thô sơ khác"
+document = "sanctions"
+effective_from = 2025-01-01
+points = 0
+citation = "điểm p khoản 1, điểm d khoản 3 và điểm b khoản 4 Điều 9"
+fact = """Người điều khiển xe đạp, xe đạp máy hoặc xe thô sơ khác trên đường mà trong máu hoặc hơi thở có nồng độ cồn bị xử phạt theo 03 mức (không áp dụng trừ điểm giấy phép lái xe):
+- Mức 1 (chưa vượt quá 50 mg/100 ml máu hoặc chưa vượt quá 0,25 mg/1 lít khí thở): phạt tiền từ 100.000 đến 200.000 đồng (điểm p khoản 1 Điều 9).
+- Mức 2 (vượt quá 50 mg đến 80 mg/100 ml máu hoặc vượt quá 0,25 mg đến 0,4 mg/1 lít khí thở): phạt tiền từ 300.000 đến 400.000 đồng (điểm d khoản 3 Điều 9).
+- Mức 3 (vượt quá 80 mg/100 ml máu hoặc vượt quá 0,4 mg/1 lít khí thở): phạt tiền từ 400.000 đến 600.000 đồng (điểm b khoản 4 Điều 9)."""
+
+[[provisions]]
+id = "speed-four-wheel-passenger"
+matches = ['\bxe chở người (bốn|4) bánh có gắn động cơ\b', '\b(tốc độ|chạy tối đa|chạy nhanh nhất)\b']
+exclude = ['\b(xe chở hàng|thay đổi|dự thảo)\b']
+document = "speed"
+effective_from = 2025-01-01
+citation = "khoản 1 Điều 8"
+fact = "Xe chở người bốn bánh có gắn động cơ được chạy tối đa 30 km/h trong phạm vi và thời gian cho phép hoạt động, theo quy định áp dụng trên đường bộ trừ đường cao tốc."
+
+[[provisions]]
+id = "license-a1-new"
+matches = ['\b(hạng|bằng) a1\b', '\b(dung tích|công suất|giới hạn|bao nhiêu cc|bao nhiêu kw)\b']
+exclude = ['\b(bằng cũ|giấy phép cũ|trước năm 2025|giấy phép đã cấp|chuyển tiếp|đổi bằng)\b']
+document = "traffic_law"
+effective_from = 2025-01-01
+citation = "điểm a khoản 1 Điều 57"
+fact = "Giấy phép lái xe hạng A1 cấp theo quy định này dùng cho mô tô hai bánh có dung tích xi-lanh đến 125 cm³ hoặc công suất động cơ điện đến 11 kW."
+
+[[provisions]]
+id = "license-points-d58"
+matches = ['\bgiấy phép lái xe\b|\bbằng lái\b', '\b(?:có bao nhiêu điểm|bao nhiêu điểm|12 điểm|phục hồi điểm|trừ hết điểm)\b']
+exclude = ['\b(?:vi phạm|vượt đèn đỏ|ngược chiều|điện thoại|mũ bảo hiểm|nồng độ cồn|vỉa hè)\b']
+document = "traffic_law"
+effective_from = 2025-01-01
+citation = "khoản 1, 2 và 3 Điều 58"
+fact = "Giấy phép lái xe bao gồm 12 điểm. Giấy phép lái xe chưa bị trừ hết điểm và không bị trừ điểm trong thời hạn 12 tháng từ ngày bị trừ điểm gần nhất thì được phục hồi đủ 12 điểm. Trường hợp bị trừ hết điểm thì không được điều khiển phương tiện theo giấy phép đó và sau ít nhất 06 tháng phải kiểm tra kiến thức pháp luật đạt yêu cầu mới được phục hồi đủ 12 điểm."
+
+[[definitions]]
+id = "def-55-2-4-duong-uu-tien"
+document = "traffic_law"
+citation = "khoản 4 Điều 2 Luật 36/2024/QH15"
+title = "Đường ưu tiên là gì"
+text = "Theo khoản 4 Điều 2 Luật Trật tự, an toàn giao thông đường bộ 36/2024/QH15, đường ưu tiên là đường mà trên đó phương tiện tham gia giao thông đường bộ được các phương tiện tham gia giao thông đường bộ đến từ hướng khác nhường đường khi qua nơi đường giao nhau, được cắm biển báo hiệu đường ưu tiên."
+
+[[definitions]]
+id = "def-55-2-5-phan-duong-xe-chay"
+document = "traffic_law"
+citation = "khoản 5 Điều 2 Luật 36/2024/QH15"
+title = "Phần đường xe chạy là gì"
+text = "Theo khoản 5 Điều 2 Luật Trật tự, an toàn giao thông đường bộ 36/2024/QH15, phần đường xe chạy là phần của đường bộ được sử dụng cho phương tiện giao thông đường bộ đi lại."
+
+[[definitions]]
+id = "def-55-2-6-lan-duong"
+document = "traffic_law"
+citation = "khoản 6 Điều 2 Luật 36/2024/QH15"
+title = "Làn đường là gì"
+text = "Theo khoản 6 Điều 2 Luật Trật tự, an toàn giao thông đường bộ 36/2024/QH15, làn đường là một phần của phần đường xe chạy được chia theo chiều dọc của đường, có đủ chiều rộng cho xe chạy an toàn."
+
+[[definitions]]
+id = "def-55-2-8-nguoi-tham-gia"
+document = "traffic_law"
+citation = "khoản 8 Điều 2 Luật 36/2024/QH15"
+title = "Người tham gia giao thông đường bộ là gì"
+text = "Theo khoản 8 Điều 2 Luật Trật tự, an toàn giao thông đường bộ 36/2024/QH15, người tham gia giao thông đường bộ bao gồm: người điều khiển, người được chở trên phương tiện tham gia giao thông đường bộ; người điều khiển, dẫn dắt vật nuôi trên đường bộ; người đi bộ trên đường bộ."
+
+[[definitions]]
+id = "def-55-2-11-un-tac"
+document = "traffic_law"
+citation = "khoản 11 Điều 2 Luật 36/2024/QH15"
+title = "Ùn tắc giao thông đường bộ là gì"
+text = "Theo khoản 11 Điều 2 Luật Trật tự, an toàn giao thông đường bộ 36/2024/QH15, ùn tắc giao thông đường bộ là tình trạng người, phương tiện tham gia giao thông đường bộ bị dồn ứ, di chuyển với tốc độ rất chậm hoặc không thể di chuyển được."
+
+[[definitions]]
+id = "def-55-2-12-tai-nan"
+document = "traffic_law"
+citation = "khoản 12 Điều 2 Luật 36/2024/QH15"
+title = "Tai nạn giao thông đường bộ là gì"
+text = "Theo khoản 12 Điều 2 Luật Trật tự, an toàn giao thông đường bộ 36/2024/QH15, tai nạn giao thông đường bộ là va chạm liên quan đến người, phương tiện khi tham gia giao thông đường bộ, xảy ra ngoài ý muốn của người tham gia giao thông đường bộ, gây thiệt hại đến tính mạng, sức khỏe, tài sản của cá nhân hoặc tài sản của cơ quan, tổ chức."
+
+[[definitions]]
+id = "def-55-34-1-xe-mo-to"
+document = "traffic_law"
+citation = "điểm e khoản 1 Điều 34 Luật 36/2024/QH15"
+title = "Xe mô tô là gì"
+text = "Theo điểm e khoản 1 Điều 34 Luật Trật tự, an toàn giao thông đường bộ 36/2024/QH15, xe mô tô thuộc nhóm xe cơ giới, gồm xe có hai hoặc ba bánh chạy bằng động cơ, được thiết kế, sản xuất để hoạt động trên đường bộ, trừ xe gắn máy; đối với xe ba bánh thì khối lượng bản thân không lớn hơn 400 kg."
+
+[[definitions]]
+id = "def-55-34-1-xe-gan-may"
+document = "traffic_law"
+citation = "điểm g khoản 1 Điều 34 Luật 36/2024/QH15"
+title = "Xe gắn máy là gì"
+text = "Theo điểm g khoản 1 Điều 34 Luật Trật tự, an toàn giao thông đường bộ 36/2024/QH15, xe gắn máy thuộc nhóm xe cơ giới, là xe có hai hoặc ba bánh chạy bằng động cơ, có vận tốc thiết kế không lớn hơn 50 km/h; nếu động cơ nhiệt thì dung tích làm việc không lớn hơn 50 cm3; nếu động cơ điện thì công suất không lớn hơn 04 kW; không bao gồm xe đạp máy."
+
+[[definitions]]
+id = "def-55-34-2-xe-tho-so"
+document = "traffic_law"
+citation = "khoản 2 Điều 34 Luật 36/2024/QH15"
+title = "Xe thô sơ và xe đạp máy là gì"
+text = "Theo khoản 2 Điều 34 Luật Trật tự, an toàn giao thông đường bộ 36/2024/QH15, xe thô sơ bao gồm: xe đạp; xe đạp máy (gồm cả xe đạp điện có trợ lực động cơ bị ngắt khi dừng đạp hoặc đạt 25 km/h); xe xích lô; xe lăn dùng cho người khuyết tật; xe vật nuôi kéo."
+
+[[definitions]]
+id = "def-55-14-vuot-xe"
+document = "traffic_law"
+citation = "khoản 1, 2, 3, 4 và 6 Điều 14 Luật 36/2024/QH15"
+title = "Quy định về vượt xe và nhường đường cho xe xin vượt"
+text = "Theo Điều 14 Luật 36/2024/QH15, khi vượt các xe phải vượt bên trái (chỉ vượt bên phải khi xe phía trước có tín hiệu rẽ trái hoặc đang rẽ trái hoặc xe chuyên dùng đang làm việc mà không thể vượt bên trái). Xe xin vượt chỉ được vượt khi không có chướng ngại vật phía trước, không có xe ngược chiều, xe trước không có tín hiệu vượt xe khác, đã có tín hiệu rẽ phải và tránh về bên phải. Khi đủ điều kiện an toàn, xe phía trước phải giảm tốc độ, bật tín hiệu rẽ phải và đi sát về bên phải."
+
+[[definitions]]
+id = "def-55-16-lui-xe"
+document = "traffic_law"
+citation = "Điều 16 Luật 36/2024/QH15"
+title = "Quy định về lùi xe và các nơi cấm lùi xe"
+text = "Theo Điều 16 Luật 36/2024/QH15, khi lùi xe phải quan sát hai bên và phía sau, có tín hiệu lùi và chỉ lùi khi bảo đảm an toàn. Không được lùi xe ở đường một chiều, khu vực cấm dừng, trên phần đường dành cho người đi bộ qua đường, nơi đường bộ giao nhau, đường bộ giao nhau cùng mức với đường sắt, nơi tầm nhìn bị che khuất, trong hầm đường bộ, trên đường cao tốc."

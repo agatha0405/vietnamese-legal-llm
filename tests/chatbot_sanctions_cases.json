@@ -1,0 +1,16 @@
+[
+  {"id":"car-casual","question":"Xe ô tô vượt đèn đỏ phạt như nào?","kind":"grounded","rule":"signal-car","reference":"18.000.000–20.000.000 đồng, trừ 4 điểm, điểm b khoản 9 và điểm b khoản 16 Điều 6 Nghị định 168/2024/NĐ-CP."},
+  {"id":"moped","question":"Xe gắn máy vượt đèn đỏ phạt thế nào?","kind":"grounded","rule":"signal-moto","reference":"4.000.000–6.000.000 đồng, trừ 4 điểm nếu giấy phép thuộc diện bị trừ, Điều 7 Nghị định 168/2024/NĐ-CP."},
+  {"id":"bicycle-signal","question":"Đi xe đạp không chấp hành hiệu lệnh đèn tín hiệu bị phạt sao?","kind":"grounded","rule":"signal-bicycle","reference":"150.000–250.000 đồng, điểm đ khoản 2 Điều 9 Nghị định 168/2024/NĐ-CP."},
+  {"id":"bicycle-phone","question":"Điều khiển xe đạp đang chạy, cầm và sử dụng điện thoại thì phạt ra sao?","kind":"grounded","rule":"phone-bicycle","reference":"100.000–200.000 đồng, điểm h khoản 1 Điều 9 Nghị định 168/2024/NĐ-CP."},
+  {"id":"helmet","question":"Người lái xe máy không đội mũ bảo hiểm bị phạt bao nhiêu?","kind":"grounded","rule":"helmet-moto","reference":"400.000–600.000 đồng, điểm h khoản 2 Điều 7 Nghị định 168/2024/NĐ-CP."},
+  {"id":"phone","question":"Tài xế ô tô đang chạy, dùng tay cầm và sử dụng điện thoại thì bị phạt bao nhiêu?","kind":"grounded","rule":"phone-car","reference":"4.000.000–6.000.000 đồng, trừ 4 điểm, điểm h khoản 5 và điểm b khoản 16 Điều 6 Nghị định 168/2024/NĐ-CP."},
+  {"id":"money","question":"Xe máy vượt đèn đỏ mất bao nhiêu tiền?","kind":"grounded","rule":"signal-moto","reference":"4.000.000–6.000.000 đồng, Điều 7 Nghị định 168/2024/NĐ-CP."},
+  {"id":"car-unknown","question":"Ô tô hết đăng kiểm bị phạt bao nhiêu?","kind":"no_source","reference":"Chưa có căn cứ xử phạt đã đối chiếu cho trường hợp này."},
+  {"id":"unknown-casual","question":"Xe máy chở ba phạt như nào?","kind":"no_source","reference":"Chưa có căn cứ xử phạt đã đối chiếu cho trường hợp này."},
+  {"id":"special-machine","question":"Xe máy chuyên dùng vượt đèn đỏ phạt như nào?","kind":"no_source","reference":"Chưa có căn cứ xử phạt đã đối chiếu trong kho cho loại xe này."},
+  {"id":"missing","question":"Vượt đèn đỏ phạt bao nhiêu?","kind":"clarify","reference":"Bạn đi loại phương tiện nào?"},
+  {"id":"date","question":"Xe ô tô vượt đèn đỏ ngày 15/11/2026 phạt thế nào?","kind":"no_source","reference":"Chưa có căn cứ đã đối chiếu cho thời điểm này."},
+  {"id":"accident","question":"Xe ô tô vượt đèn đỏ gây tai nạn phạt như nào?","kind":"no_source","reference":"Chưa có căn cứ xử phạt đã đối chiếu cho trường hợp này."},
+  {"id":"foreign","question":"Ở Nhật Bản xe đạp vượt đèn đỏ phạt như nào?","kind":"outside","reference":"Câu hỏi nằm ngoài phạm vi pháp luật giao thông đường bộ Việt Nam."}
+]

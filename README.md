@@ -25,7 +25,7 @@ Dự án tinh chỉnh `Qwen/Qwen2.5-3B-Instruct` bằng QLoRA để trả lời 
 
 ## 3. Tính năng nổi bật
 
-- Demo có ba chế độ **Base**, **Fine-tuned** và **So sánh**. Người dùng có thể hỏi tiếp theo ngữ cảnh, xóa lịch sử và xem thời gian phản hồi của từng mô hình. [Hướng dẫn demo](app/README.md)
+- Demo có ba chế độ **Base**, **Fine-tuned** và **So sánh**. Câu hỏi có điều khoản khớp nhận cùng kết quả từ kho nguồn đã đối chiếu. Các lượt đi qua mô hình hiển thị tên chế độ và thời gian sinh. Bảng điểm nghiên cứu bên dưới lấy từ phép đánh giá độc lập với kho tra cứu. [Hướng dẫn demo](app/README.md)
 - Adapter đã huấn luyện đủ 2 epoch, 100 bước cập nhật với 14.966.784 tham số trainable. Validation loss cuối là 0,90517. Gói bàn giao có cấu hình, lịch sử loss và manifest SHA-256. [Gói adapter](outputs/finetuning/qwen3b-r8-step100.zip) · [Đường cong loss](outputs/evaluation/qwen3b-r8/results/training_loss.png)
 - Quy trình đánh giá giữ nguyên tập test và xuất dự đoán, chỉ số cùng phiếu chấm pháp lý ẩn tên mô hình. [Kết quả so sánh](outputs/evaluation/qwen3b-r8/results/comparison_report.md)
 

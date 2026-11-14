@@ -16,7 +16,8 @@ SOURCE_FILES = (
     "requirements.txt",
     "scripts/evaluate_baseline.py", "scripts/train_qlora.py", "scripts/run_checkpoint.py",
     "scripts/evaluate_adapter.py", "scripts/evaluate_refusal.py", "scripts/summarize_training.py", "scripts/demo.py",
-    "app/app.py", "data/processed/legal_qa_master.jsonl", "data/processed/train.jsonl",
+    "app/app.py", "app/inference.py", "app/grounding.py", "app/legal_sources.toml",
+    "data/processed/legal_qa_master.jsonl", "data/processed/train.jsonl",
     "data/processed/validation.jsonl", "data/processed/test.jsonl", "data/processed/out_of_scope_test.jsonl",
     "outputs/baseline/baseline_predictions.csv", "outputs/baseline/baseline_metrics.json",
 )

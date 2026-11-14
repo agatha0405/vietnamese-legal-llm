@@ -5,6 +5,7 @@ __pycache__/
 .ipynb_checkpoints/
 .env
 .env.*
+.gradio/
 
 # Keep only the Colab bundles and environment checks referenced by the docs
 /artifacts/*
@@ -33,3 +34,8 @@ data/interim/
 /RESUME_INSTRUCTIONS.md
 /scripts/resume_pipeline.py
 /reports/
+/presentation/
+/outputs/evaluation/chatbot-grounding-20261114/
+/outputs/evaluation/chatbot-handoff-20261114/
+/outputs/evaluation/chatbot-quality-20261114/
+/outputs/evaluation/chatbot-sanctions-20261114/

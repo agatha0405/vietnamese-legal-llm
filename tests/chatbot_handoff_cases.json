@@ -1,0 +1,267 @@
+{
+  "metadata": {
+    "description": "Stage C handoff regression and Base vs Fine-tuned / Standalone vs RAG ablation suite.",
+    "created_for": "Vietnamese Legal LLM handoff (Issues A-E)"
+  },
+  "model_comparison_cases": [
+    {
+      "id": "cmp-priority-road",
+      "category": "Định nghĩa (ngoài template rule-based)",
+      "history": [],
+      "question": "Mô tả đường ưu tiên.",
+      "reference": "Theo khoản 4 Điều 2 Luật Trật tự, an toàn giao thông đường bộ 36/2024/QH15, đường ưu tiên là đường mà trên đó phương tiện tham gia giao thông đường bộ được các phương tiện tham gia giao thông đường bộ đến từ hướng khác nhường đường khi qua nơi đường giao nhau, được cắm biển báo hiệu đường ưu tiên."
+    },
+    {
+      "id": "cmp-motorcycle-def",
+      "category": "Định nghĩa phương tiện",
+      "history": [],
+      "question": "Xe máy là gì theo Luật Trật tự, an toàn giao thông đường bộ?",
+      "reference": "Theo điểm e khoản 1 Điều 34 Luật Trật tự, an toàn giao thông đường bộ 36/2024/QH15, xe mô tô thuộc nhóm xe cơ giới, gồm xe có hai hoặc ba bánh chạy bằng động cơ, được thiết kế, sản xuất để hoạt động trên đường bộ, trừ xe gắn máy; đối với xe ba bánh thì khối lượng bản thân không lớn hơn 400 kg."
+    },
+    {
+      "id": "cmp-roadway-def",
+      "category": "Định nghĩa (khoản 5 Điều 2)",
+      "history": [],
+      "question": "Phần đường xe chạy là gì?",
+      "reference": "Theo khoản 5 Điều 2 văn bản số 36/2024/QH15, phần đường xe chạy là phần của đường bộ được sử dụng cho phương tiện giao thông đường bộ đi lại."
+    },
+    {
+      "id": "cmp-turn-def",
+      "category": "Quy tắc giao thông (khoản 1 Điều 15)",
+      "history": [],
+      "question": "Những thao tác nào được coi là chuyển hướng xe?",
+      "reference": "Theo khoản 1 Điều 15 văn bản số 36/2024/QH15, chuyển hướng xe là tình huống giao thông mà xe rẽ trái hoặc rẽ phải hoặc quay đầu xe."
+    },
+    {
+      "id": "cmp-parking-emergency",
+      "category": "Tình huống thực tế (khoản 7 Điều 18)",
+      "history": [],
+      "question": "Khi gặp sự cố kỹ thuật buộc phải đỗ xe chiếm một phần đường xe chạy thì phải báo hiệu như thế nào?",
+      "reference": "Theo khoản 7 Điều 18 văn bản số 36/2024/QH15, khi gặp sự cố kỹ thuật hoặc bất khả kháng khác buộc phải đỗ xe chiếm một phần đường xe chạy hoặc tại nơi không được phép đỗ, phải có báo hiệu bằng đèn khẩn cấp hoặc đặt biển cảnh báo về phía sau xe để người tham gia giao thông khác biết."
+    },
+    {
+      "id": "cmp-tunnel-followup",
+      "category": "Hội thoại nhiều lượt (khoản 2 Điều 26)",
+      "history": [
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Khi gặp sự cố kỹ thuật buộc phải đỗ xe chiếm một phần đường xe chạy thì phải báo hiệu như thế nào?"
+            }
+          ]
+        },
+        {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Theo khoản 7 Điều 18 Luật 36/2024/QH15, phải có báo hiệu bằng đèn khẩn cấp hoặc đặt biển cảnh báo về phía sau xe để người điều khiển phương tiện khác biết."
+            }
+          ]
+        }
+      ],
+      "question": "Nếu sự cố đó xảy ra trong hầm đường bộ và xe không di chuyển được thì phải làm gì?",
+      "reference": "Theo khoản 2 Điều 26 văn bản số 36/2024/QH15, trường hợp gặp sự cố kỹ thuật trong hầm đường bộ mà không di chuyển được vào vị trí dừng xe, đỗ xe khẩn cấp, phải có báo hiệu bằng đèn khẩn cấp, đặt biển hoặc đèn cảnh báo về phía sau xe khoảng cách bảo đảm an toàn và nhanh chóng báo cho cơ quan Cảnh sát giao thông hoặc cơ quan quản lý hầm đường bộ."
+    }
+  ],
+  "e2e_app_cases": [
+    {
+      "id": "handoff-a-red-car",
+      "issue": "Issue A: Sai mức xử phạt vượt đèn đỏ ô tô",
+      "history": [],
+      "question": "Xe ô tô vượt đèn đỏ phạt như nào?",
+      "expected_kind": "grounded",
+      "must_contain": ["18.000.000 đến 20.000.000 đồng", "4 điểm", "Điều 6", "168/2024/NĐ-CP"],
+      "must_not_contain": ["1.000.000", "1,5 triệu"]
+    },
+    {
+      "id": "handoff-b-wrongway-moto",
+      "issue": "Issue B: Over-refusal đi xe máy ngược chiều",
+      "history": [],
+      "question": "Đi xe máy ngược chiều trên đường một chiều bị xử phạt như thế nào?",
+      "expected_kind": "grounded",
+      "must_contain": ["4.000.000 đến 6.000.000 đồng", "2 điểm", "Điều 7", "168/2024/NĐ-CP"],
+      "must_not_contain": ["chưa có căn cứ"]
+    },
+    {
+      "id": "handoff-c-phone-turn1",
+      "issue": "Issue C: Hội thoại nhiều lượt — lượt 1 chưa rõ phương tiện",
+      "history": [],
+      "question": "Vừa chạy xe vừa nghe điện thoại bị phạt sao?",
+      "expected_kind": "clarify",
+      "must_contain": ["phương tiện", "ô tô", "xe máy"],
+      "must_not_contain": ["800.000", "4.000.000"]
+    },
+    {
+      "id": "handoff-c-phone-turn2-v6",
+      "issue": "Issue C: Hội thoại nhiều lượt (Gradio v6 list[dict]) — lượt 2 chọn xe máy",
+      "history": [
+        {
+          "role": "user",
+          "content": [{"type": "text", "text": "Vừa chạy xe vừa nghe điện thoại bị phạt sao?"}]
+        },
+        {
+          "role": "assistant",
+          "content": [{"type": "text", "text": "Bạn đi loại phương tiện nào, chẳng hạn ô tô, xe máy hay xe đạp?"}]
+        }
+      ],
+      "question": "Xe máy",
+      "expected_kind": "clarify",
+      "must_contain": ["tay cầm", "đang chạy"],
+      "must_not_contain": ["mô tô thuộc nhóm", "4.000.000"]
+    },
+    {
+      "id": "handoff-c-phone-turn3-v6",
+      "issue": "Issue C: Hội thoại nhiều lượt (Gradio v6 list[dict]) — lượt 3 xác nhận đang chạy & cầm tay",
+      "history": [
+        {
+          "role": "user",
+          "content": [{"type": "text", "text": "Vừa chạy xe vừa nghe điện thoại bị phạt sao?"}]
+        },
+        {
+          "role": "assistant",
+          "content": [{"type": "text", "text": "Bạn đi loại phương tiện nào, chẳng hạn ô tô, xe máy hay xe đạp?"}]
+        },
+        {
+          "role": "user",
+          "content": [{"type": "text", "text": "Xe máy"}]
+        },
+        {
+          "role": "assistant",
+          "content": [{"type": "text", "text": "Xe có đang chạy và người lái có dùng tay cầm thiết bị không?"}]
+        }
+      ],
+      "question": "Đang chạy và dùng tay cầm điện thoại.",
+      "expected_kind": "grounded",
+      "must_contain": ["800.000 đến 1.000.000 đồng", "4 điểm", "Điều 7"],
+      "must_not_contain": ["chưa có căn cứ"]
+    },
+    {
+      "id": "handoff-d-fake-999-turn1",
+      "issue": "Issues C+D: Nhận diện Điều 999 giả ngay lượt 1",
+      "history": [],
+      "question": "Theo Điều 999 Luật Trật tự, an toàn giao thông đường bộ, vượt đèn đỏ bị phạt bao nhiêu?",
+      "expected_kind": "clarify",
+      "must_contain": ["không có Điều 999", "89 điều", "ô tô", "xe máy"],
+      "must_not_contain": ["hợp lệ"]
+    },
+    {
+      "id": "handoff-d-fake-999-turn2-v6",
+      "issue": "Issues C+D: Giữ cảnh báo Điều 999 và ngữ cảnh vượt đèn đỏ qua lượt 2 'Xe máy'",
+      "history": [
+        {
+          "role": "user",
+          "content": [{"type": "text", "text": "Theo Điều 999 Luật Trật tự, an toàn giao thông đường bộ, vượt đèn đỏ bị phạt bao nhiêu?"}]
+        },
+        {
+          "role": "assistant",
+          "content": [{"type": "text", "text": "Lưu ý kiểm chứng căn cứ pháp lý: Luật Trật tự, an toàn giao thông đường bộ năm 2024 (Luật 36/2024/QH15) chỉ có 89 điều (từ Điều 1 đến Điều 89), không có Điều 999. Đồng thời, các mức xử phạt vi phạm hành chính được quy định tại Nghị định 168/2024/NĐ-CP.\n\nBạn đi loại phương tiện nào, chẳng hạn ô tô, xe máy hay xe đạp?"}]
+        }
+      ],
+      "question": "Xe máy",
+      "expected_kind": "grounded",
+      "must_contain": ["không có Điều 999", "4.000.000 đến 6.000.000 đồng", "4 điểm", "Điều 7"],
+      "must_not_contain": ["mô tô thuộc nhóm"]
+    },
+    {
+      "id": "handoff-d-fake-999-turn3-switch-car",
+      "issue": "Issues C+D: Chuyển sang ô tô ở lượt 3 vẫn giữ ngữ cảnh vượt đèn đỏ",
+      "history": [
+        {
+          "role": "user",
+          "content": [{"type": "text", "text": "Theo Điều 999 Luật Trật tự, an toàn giao thông đường bộ, vượt đèn đỏ bị phạt bao nhiêu?"}]
+        },
+        {
+          "role": "assistant",
+          "content": [{"type": "text", "text": "Lưu ý kiểm chứng căn cứ pháp lý: Luật Trật tự, an toàn giao thông đường bộ năm 2024 (Luật 36/2024/QH15) chỉ có 89 điều (từ Điều 1 đến Điều 89), không có Điều 999. Đồng thời, các mức xử phạt vi phạm hành chính được quy định tại Nghị định 168/2024/NĐ-CP.\n\nBạn đi loại phương tiện nào, chẳng hạn ô tô, xe máy hay xe đạp?"}]
+        },
+        {
+          "role": "user",
+          "content": [{"type": "text", "text": "Xe máy"}]
+        },
+        {
+          "role": "assistant",
+          "content": [{"type": "text", "text": "Lưu ý kiểm chứng căn cứ pháp lý: Luật Trật tự, an toàn giao thông đường bộ năm 2024 (Luật 36/2024/QH15) chỉ có 89 điều (từ Điều 1 đến Điều 89), không có Điều 999. Đồng thời, các mức xử phạt vi phạm hành chính được quy định tại Nghị định 168/2024/NĐ-CP.\n\nNgười điều khiển xe mô tô hoặc xe gắn máy không chấp hành hiệu lệnh của đèn tín hiệu giao thông (không gây tai nạn giao thông) bị phạt từ 4.000.000 đến 6.000.000 đồng và trừ 4 điểm giấy phép lái xe nếu có giấy phép thuộc diện bị trừ điểm.\nMốc áp dụng dùng để tra cứu: 14/11/2026.\nCăn cứ: điểm c khoản 7 và điểm b khoản 13 Điều 7 Nghị định 168/2024/NĐ-CP.\nNguồn: https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm\nVăn bản sửa đổi hoặc hợp nhất đã đối chiếu: https://vanban.chinhphu.vn/?docid=218613&pageid=27160"}]
+        }
+      ],
+      "question": "Còn ô tô thì sao?",
+      "expected_kind": "grounded",
+      "must_contain": ["18.000.000 đến 20.000.000 đồng", "4 điểm", "Điều 6"],
+      "must_not_contain": ["chưa có căn cứ"]
+    },
+    {
+      "id": "handoff-d-repealed-nd100",
+      "issue": "Issue D: Cảnh báo Nghị định 100/2019/NĐ-CP đã hết hiệu lực",
+      "history": [],
+      "question": "Theo Nghị định 100/2019/NĐ-CP, đi xe máy vượt đèn đỏ phạt bao nhiêu?",
+      "expected_kind": "grounded",
+      "must_contain": ["hết hiệu lực", "168/2024/NĐ-CP", "4.000.000 đến 6.000.000 đồng"],
+      "must_not_contain": ["800.000"]
+    },
+    {
+      "id": "handoff-e-def-priority",
+      "issue": "Issue E: Câu hỏi định nghĩa đi qua RAG + LLM nhất quán",
+      "history": [],
+      "question": "Mô tả đường ưu tiên.",
+      "expected_kind": null,
+      "must_contain": ["đường ưu tiên", "giao nhau"],
+      "must_not_contain": ["ngược chiều", "chưa có căn cứ", "ngoài phạm vi"]
+    },
+    {
+      "id": "handoff-e-points-d58",
+      "issue": "Issue B/E: Câu hỏi về 12 điểm GPLX (Điều 58 Luật 36/2024)",
+      "history": [],
+      "question": "Giấy phép lái xe có bao nhiêu điểm?",
+      "expected_kind": "grounded",
+      "must_contain": ["12 điểm", "Điều 58"],
+      "must_not_contain": ["chưa có căn cứ"]
+    },
+    {
+      "id": "handoff-provision-speed",
+      "issue": "Regression: Quy định tốc độ 30 km/h (Thông tư 38/2024)",
+      "history": [],
+      "question": "Xe chở người bốn bánh có gắn động cơ được chạy tối đa bao nhiêu trong phạm vi và thời gian cho phép hoạt động?",
+      "expected_kind": "grounded",
+      "must_contain": ["30 km/h", "Điều 8", "38/2024/TT-BGTVT"],
+      "must_not_contain": []
+    },
+    {
+      "id": "handoff-provision-a1",
+      "issue": "Regression: Giấy phép hạng A1 (Điều 57 Luật 36/2024)",
+      "history": [],
+      "question": "Theo Luật 36/2024/QH15, bằng lái mới hạng A1 được cấp cho người lái xe mô tô hai bánh trong giới hạn dung tích hoặc công suất nào?",
+      "expected_kind": "grounded",
+      "must_contain": ["125", "11 kW", "Điều 57"],
+      "must_not_contain": []
+    },
+    {
+      "id": "handoff-no-source-unverified-fine",
+      "issue": "Grounding guard: Câu hỏi xử phạt chưa có rule không được tự bịa tiền phạt",
+      "history": [],
+      "question": "Lái ô tô đỗ trên cầu vượt bị phạt bao nhiêu tiền?",
+      "expected_kind": "no_source",
+      "must_contain": ["chưa có căn cứ"],
+      "must_not_contain": ["triệu đồng"]
+    },
+    {
+      "id": "handoff-oos-marriage",
+      "issue": "Out-of-scope: Đăng ký kết hôn",
+      "history": [],
+      "question": "Tôi muốn đăng ký kết hôn thì chuẩn bị giấy tờ gì?",
+      "expected_kind": "outside",
+      "must_contain": ["ngoài phạm vi"],
+      "must_not_contain": ["Nghị định 168"]
+    },
+    {
+      "id": "handoff-oos-foreign",
+      "issue": "Out-of-scope: Pháp luật Nhật Bản",
+      "history": [],
+      "question": "Vượt đèn đỏ ở Nhật Bản bị phạt thế nào?",
+      "expected_kind": "outside",
+      "must_contain": ["ngoài phạm vi"],
+      "must_not_contain": ["18.000.000", "4.000.000"]
+    }
+  ]
+}
